@@ -1,0 +1,54 @@
+{
+    "name": "parego/laravel-admin",
+    "description": "Parego admin skeleton for Laravel projects",
+    "keywords": [
+        "parego",
+        "laravel-admin"
+    ],
+    "homepage": "https://github.com/parego/laravel-admin",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Bart Heideman",
+            "email": "bart@parego.nl",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Parego\\LaravelAdmin\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Parego\\LaravelAdmin\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Parego\\LaravelAdmin\\LaravelAdminServiceProvider"
+            ],
+            "aliases": {
+                "LaravelAdmin": "Parego\\LaravelAdmin\\LaravelAdminFacade"
+            }
+        }
+    }
+}
